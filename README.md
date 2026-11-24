@@ -12,7 +12,7 @@ The joke is pure cat logic: the bowl is full, the food is right there — but it
 
 ## How it runs
 
-`main.py` (Python 3.13 standard library only) writes the line to `$MAKEFUN_OUTPUT_DIR/entry.txt` and nothing else. It never writes into the repository directory, and if the output directory is unwritable it reports the problem and exits cleanly instead of crashing.
+`main.py` (Python 3.13 standard library only) validates the line against the bounty rules (single line, 1–200 characters, valid UTF-8) and then writes it to `$MAKEFUN_OUTPUT_DIR/entry.txt` and nothing else. It never writes into the repository directory, and if the output directory is unwritable it reports the problem and exits cleanly instead of crashing.
 
 ```sh
 MAKEFUN_OUTPUT_DIR=/tmp/out python3 main.py
